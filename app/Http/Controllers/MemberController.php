@@ -60,7 +60,7 @@ class MemberController extends Controller{
         if ($validator->fails()) {
             return [
                 "status" => "false",
-                "message" => '用户名或密码不能为空',
+                "message" => $validator->errors()->first()
             ];
         }
         //登录验证
